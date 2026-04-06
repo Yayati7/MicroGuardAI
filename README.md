@@ -1,29 +1,64 @@
-# MicroGuardAI — AI-Powered Architecture Reviewer
+# 🚀 MicroGuard AI — AI-Powered Architecture Reviewer
 
-A full-stack microservices application that analyzes software architecture definitions using AI and returns security vulnerability reports.
+MicroGuard AI is a cloud-native microservices platform that allows users to submit their distributed system architectures and receive AI-powered security analysis, risk detection, and recommendations. Built with Java Spring Boot, Apache Kafka, Angular, and Mistral AI, MicroGuard simulates real-world backend infrastructure while providing intelligent architecture reviews.
 
-## Tech Stack
-- **Backend:** Spring Boot Microservices (Config Server, Eureka, API Gateway)
-- **Messaging:** Apache Kafka
-- **Authentication:** Keycloak with Google OAuth2
-- **Databases:** PostgreSQL (users/projects), MongoDB (AI analysis results)
-- **AI:** Mistral AI API
-- **Frontend:** Angular 17 with SSR
-- **Deployment:** Docker Compose on Google Cloud
+---
 
-## Architecture
-- Config Server (port 8888)
-- Eureka Service Discovery (port 8761)
-- API Gateway (port 8080)
-- User Service (port 8081) — PostgreSQL
-- Architecture Service (port 8082) — MongoDB + Kafka
-- AI Analysis Service (port 8083) — MongoDB + Kafka + Mistral AI
-- Angular SSR Frontend (port 4000)
-- Keycloak Authentication (port 8080)
-- Nginx Reverse Proxy
+## ✨ Features
+- 🤖 AI-powered architecture analysis using Mistral API with async processing via Apache Kafka  
+- 🧩 Submit microservice architecture details (services, databases, communication patterns)  
+- 📂 Per-user project history stored in PostgreSQL (no repeated AI calls)  
+- 🔐 Secure Google SSO authentication via Keycloak OAuth2  
+- ⚡ Event-driven backend with decoupled communication across 8 microservices  
+- 🌐 Service discovery & load balancing via Spring Cloud Eureka  
+- 🛠 Centralized configuration management via Spring Cloud Config Server  
+- 🚪 API routing & JWT validation via Spring Cloud API Gateway  
+- 🗄 Persistent analysis results stored in MongoDB with write-back to PostgreSQL  
+- 🎨 Responsive Angular frontend with dark-themed UI and real-time loading states  
 
-## Live Demo
-https://34.14.214.173.nip.io
+---
 
-## Setup
-See `.env.example` for required environment variables.
+## 🧱 Tech Stack
+**Frontend:** Angular, TypeScript, CSS  
+**Backend:** Java, Spring Boot, Spring Cloud (Eureka, Config Server, API Gateway)  
+**Messaging:** Apache Kafka, Zookeeper  
+**Databases:** PostgreSQL, MongoDB  
+**AI:** Mistral API  
+**Authentication:** Keycloak, OAuth2, Google SSO  
+**Deployment:** Docker, Docker Compose, Nginx, GCP  
+
+---
+
+## 🏗 Architecture Overview
+Browser → Nginx → Angular Frontend (SSR)
+→ API Gateway → User Service → PostgreSQL
+→ Architecture Service → MongoDB + Kafka
+→ AI Analysis Service → Mistral API + MongoDB
+
+---
+
+## ⚙️ Prerequisites
+- Docker and Docker Compose  
+- Node.js (v20.x or higher)  
+- Java 17  
+- Google OAuth2 credentials  
+- Mistral API key  
+
+---
+
+## ▶️ Usage
+1. Open the application in your browser  
+2. Sign in with your Google account via Keycloak SSO  
+3. Fill in your project details — name, services, database, and communication pattern  
+4. Click **Run AI Analysis**  
+5. View the AI-generated security analysis and recommendations  
+6. Return to the dashboard to revisit past analyses without additional API calls  
+
+---
+
+## 🙌 Acknowledgements
+Spring Boot • Spring Cloud • Apache Kafka • Angular • Keycloak • Mistral AI • MongoDB • PostgreSQL  
+
+---
+
+💡 Inspired by real-world microservices deployment patterns and the practical challenges of securing distributed system architectures at scale.
