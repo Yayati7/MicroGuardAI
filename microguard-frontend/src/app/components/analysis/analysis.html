@@ -1,0 +1,134 @@
+<!-- analysis.html — MicroGuard AI Analysis Results -->
+<div class="grid-bg"></div>
+<div class="glow-orb glow-orb-1"></div>
+<div class="scan-line"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo">
+    <div class="nav-logo-icon"></div>
+    Micro<span>Guard</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/dashboard">Dashboard</a></li>
+    <li><a href="/analysis" style="color:var(--cyan)">Analysis</a></li>
+  </ul>
+  <a href="/dashboard" class="btn btn-outline" style="padding:10px 20px;font-size:12px;">
+    ← Back
+  </a>
+</nav>
+
+<!-- MAIN -->
+<main class="analysis-layout">
+
+  <!-- Page Header -->
+  <div class="analysis-header fade-up">
+    <div class="analysis-header-left">
+      <div class="section-tag">AI Analysis Report</div>
+      <h1 class="analysis-title">Security Analysis</h1>
+      <div class="analysis-id">
+        <span class="analysis-id-label">Project ID</span>
+        <span class="analysis-id-val">{{ projectId || '—' }}</span>
+      </div>
+    </div>
+    <div class="analysis-header-right" *ngIf="!loading && result.length > 0">
+      <div class="badge" style="font-size:12px">
+        <span class="badge-dot"></span>
+        Analysis Complete
+      </div>
+    </div>
+  </div>
+
+  <!-- LOADING STATE -->
+  <div class="loading-state fade-up" *ngIf="loading">
+    <div class="loading-terminal">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="terminal-title">analyzing...</div>
+      </div>
+      <div class="loading-body">
+        <div class="loading-scanner">
+          <div class="scanner-bar"></div>
+        </div>
+        <div class="loading-steps">
+          <div class="loading-step active">
+            <div class="step-pulse"></div>
+            <span>Parsing architecture graph</span>
+          </div>
+          <div class="loading-step active">
+            <div class="step-pulse"></div>
+            <span>Running threat model</span>
+          </div>
+          <div class="loading-step">
+            <div class="step-pulse pending"></div>
+            <span>Scoring vulnerabilities</span>
+          </div>
+          <div class="loading-step">
+            <div class="step-pulse pending"></div>
+            <span>Generating remediation plan</span>
+          </div>
+        </div>
+        <div class="loading-message">
+          ⏳ AI is analyzing your microservice security posture...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMPTY STATE -->
+  <div class="empty-result fade-up" *ngIf="!loading && result.length === 0">
+    <div class="empty-icon">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" width="40" height="40">
+        <circle cx="24" cy="24" r="18"/>
+        <path d="M24 16v8M24 30v2"/>
+      </svg>
+    </div>
+    <h3 class="empty-title">No Analysis Found</h3>
+    <p class="empty-sub">This project may still be processing or the analysis was not found.</p>
+    <a href="/dashboard" class="btn btn-outline" style="margin-top:24px">Return to Dashboard</a>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="analysis-results fade-up" *ngIf="!loading && result.length > 0">
+    <div class="result-item" *ngFor="let item of result">
+
+      <!-- Result Content -->
+      <div class="result-card">
+        <div class="result-card-header">
+          <div class="result-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16">
+              <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7z"/>
+            </svg>
+          </div>
+          <span class="result-card-title">Security Report</span>
+          <div class="result-card-actions">
+            <button class="result-action-btn" title="Copy">
+              <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
+                <rect x="2" y="5" width="9" height="11" rx="1" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M5 5V4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-1" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="result-content">
+          <pre class="result-pre">{{ item.result }}</pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer Actions -->
+  <div class="analysis-actions fade-up" *ngIf="!loading">
+    <a href="/dashboard" class="btn btn-outline">
+      <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
+        <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      New Analysis
+    </a>
+  </div>
+
+</main>

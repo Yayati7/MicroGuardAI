@@ -1,0 +1,209 @@
+<!-- home.html — MicroGuard AI Landing Page -->
+<div class="grid-bg"></div>
+<div class="glow-orb glow-orb-1"></div>
+<div class="glow-orb glow-orb-2"></div>
+<div class="scan-line"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon"></div>
+    Micro<span>Guard</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="/login">Sign In</a></li>
+  </ul>
+  <a routerLink="/login" class="btn btn-primary" style="padding:10px 24px;font-size:12px;">
+    Get Access
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <div class="badge hero-badge fade-up">
+        <span class="badge-dot"></span>
+        AI-Powered Security Analysis
+      </div>
+
+      <h1 class="hero-title fade-up">
+        Guard Your<br>
+        <span class="hero-title-accent">Microservices</span><br>
+        Architecture
+      </h1>
+
+      <p class="hero-subtitle fade-up">
+        Intelligent vulnerability detection and threat modeling
+        for modern distributed systems. Real-time AI analysis,
+        zero friction.
+      </p>
+
+      <div class="hero-actions fade-up">
+        <a routerLink="/login" class="btn btn-primary btn-lg">
+          Start Analysis
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#how" class="btn btn-outline btn-lg">See How It Works</a>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="hero-stats fade-up">
+        <div class="stat-item">
+          <div class="stat-num">99<span>%</span></div>
+          <div class="stat-label">Detection Rate</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">&lt;30<span>s</span></div>
+          <div class="stat-label">Analysis Time</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">AI<span>+</span></div>
+          <div class="stat-label">Powered Engine</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Visual -->
+    <div class="hero-visual fade-up">
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="terminal-title">microguard_scan.sh</div>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">microguard analyze</span> <span class="t-arg">--project=myapp</span></div>
+          <div class="terminal-line t-out">→ Scanning architecture graph...</div>
+          <div class="terminal-line t-out">→ Analyzing service dependencies...</div>
+          <div class="terminal-line t-warn">⚠ Found: 3 potential SSRF vectors</div>
+          <div class="terminal-line t-warn">⚠ Found: 1 insecure JWT config</div>
+          <div class="terminal-line t-ok">✓ Auth service: secure</div>
+          <div class="terminal-line t-ok">✓ API gateway: secure</div>
+          <div class="terminal-line t-blink">▋</div>
+        </div>
+      </div>
+
+      <!-- Floating nodes -->
+      <div class="node-cluster">
+        <div class="node-ring"></div>
+        <div class="node-dot" style="top:20%;left:15%"></div>
+        <div class="node-dot node-dot-warn" style="top:55%;left:72%"></div>
+        <div class="node-dot" style="top:75%;left:30%"></div>
+        <div class="node-dot" style="top:10%;left:65%"></div>
+        <div class="node-line" style="top:25%;left:20%;width:120px;transform:rotate(30deg)"></div>
+        <div class="node-line" style="top:60%;left:38%;width:80px;transform:rotate(-20deg)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="container">
+    <div class="section-tag fade-up">Capabilities</div>
+    <h2 class="section-title fade-up">
+      Everything you need to<br>
+      <span style="color:var(--cyan)">stay protected</span>
+    </h2>
+
+    <div class="features-grid">
+      <div class="feature-card card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7z"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Threat Modeling</h3>
+        <p class="feature-text">AI maps your entire service graph and identifies attack surface exposure across all entry points.</p>
+      </div>
+
+      <div class="feature-card card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Dependency Scanning</h3>
+        <p class="feature-text">Deep inspection of service-to-service communication patterns and vulnerable dependency chains.</p>
+      </div>
+
+      <div class="feature-card card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Real-Time Reports</h3>
+        <p class="feature-text">Instant, structured vulnerability reports with severity ratings and remediation guidance.</p>
+      </div>
+
+      <div class="feature-card card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h3 class="feature-title">Architecture History</h3>
+        <p class="feature-text">Track analysis history across projects. Compare vulnerabilities over time as your system evolves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="container">
+    <div class="section-tag fade-up">Process</div>
+    <h2 class="section-title fade-up">
+      Three steps to<br>
+      <span style="color:var(--cyan)">security clarity</span>
+    </h2>
+
+    <div class="steps-row">
+      <div class="step fade-up">
+        <div class="step-num">01</div>
+        <div class="step-connector"></div>
+        <h3 class="step-title">Describe Architecture</h3>
+        <p class="step-text">Input your project name, services, database layer, and communication protocols.</p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">02</div>
+        <div class="step-connector"></div>
+        <h3 class="step-title">AI Analyzes</h3>
+        <p class="step-text">Our engine runs threat modeling, dependency analysis, and vulnerability scoring in under 30 seconds.</p>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Get Actionable Report</h3>
+        <p class="step-text">Receive a detailed security report with prioritized fixes and architectural recommendations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box fade-up">
+      <div class="cta-glow"></div>
+      <div class="section-tag" style="justify-content:center">Ready to start</div>
+      <h2 class="cta-title">Analyze your architecture<br><span style="color:var(--cyan)">right now</span></h2>
+      <a routerLink="/login" class="btn btn-primary btn-lg">
+        Get Started — It's Free
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

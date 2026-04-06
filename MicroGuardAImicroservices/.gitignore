@@ -1,0 +1,34 @@
+# Compiled files
+target/
+*.class
+*.jar
+*.war
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.settings/
+
+# Secrets and environment
+.env
+*.env
+application-secrets.properties
+*-secret.properties
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Config server secrets
+configserver/src/main/resources/config/*.properties
+
+# Allow example configs
+!configserver/src/main/resources/config/*.example.properties

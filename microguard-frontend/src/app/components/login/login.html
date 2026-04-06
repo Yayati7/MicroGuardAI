@@ -1,0 +1,124 @@
+<!-- login.html — MicroGuard AI Login -->
+<div class="grid-bg"></div>
+<div class="glow-orb glow-orb-1"></div>
+<div class="glow-orb glow-orb-2"></div>
+<div class="scan-line"></div>
+
+<div class="login-layout">
+
+  <!-- Left Panel -->
+  <div class="login-left">
+    <a href="/" class="nav-logo login-logo">
+      <div class="nav-logo-icon"></div>
+      Micro<span>Guard</span>
+    </a>
+
+    <div class="login-left-content">
+      <div class="badge fade-up">
+        <span class="badge-dot"></span>
+        Secure Authentication
+      </div>
+
+      <h1 class="login-headline fade-up">
+        Analyze.<br>
+        Detect.<br>
+        <span style="color:var(--cyan)">Protect.</span>
+      </h1>
+
+      <p class="login-sub fade-up">
+        Sign in to access your security dashboard and run
+        AI-powered architecture analysis.
+      </p>
+
+      <!-- Decorative security metrics -->
+      <div class="login-metrics fade-up">
+        <div class="metric-row">
+          <span class="metric-label">Threat Detection</span>
+          <div class="metric-bar"><div class="metric-fill" style="width:94%"></div></div>
+          <span class="metric-val">94%</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">API Coverage</span>
+          <div class="metric-bar"><div class="metric-fill" style="width:87%"></div></div>
+          <span class="metric-val">87%</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Scan Accuracy</span>
+          <div class="metric-bar"><div class="metric-fill" style="width:99%"></div></div>
+          <span class="metric-val">99%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="login-right">
+    <div class="login-card fade-up">
+
+      <div class="login-card-header">
+        <div class="login-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+            <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7z"/>
+          </svg>
+        </div>
+        <h2 class="login-card-title">Welcome Back</h2>
+        <p class="login-card-sub">Continue with your SSO provider</p>
+      </div>
+
+      <!-- SSO Button -->
+      <button class="btn-sso" (click)="login()">
+        <div class="btn-sso-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20">
+            <circle cx="12" cy="7" r="4"/>
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          </svg>
+        </div>
+        <span>Continue with Keycloak SSO</span>
+        <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
+          <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <div class="login-divider">
+        <span>Secure · Encrypted · Compliant</span>
+      </div>
+
+      <!-- Feature List -->
+      <div class="login-features">
+        <div class="login-feature">
+          <div class="lf-check">
+            <svg viewBox="0 0 12 12" fill="none" width="10" height="10">
+              <path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span>End-to-end encrypted sessions</span>
+        </div>
+        <div class="login-feature">
+          <div class="lf-check">
+            <svg viewBox="0 0 12 12" fill="none" width="10" height="10">
+              <path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span>Role-based access control</span>
+        </div>
+        <div class="login-feature">
+          <div class="lf-check">
+            <svg viewBox="0 0 12 12" fill="none" width="10" height="10">
+              <path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span>MFA-enabled SSO integration</span>
+        </div>
+      </div>
+
+      <div class="login-footer">
+        Don't have access?
+        <a href="mailto:admin@microguard.io" style="color:var(--cyan);text-decoration:none;">
+          Request an invite
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
